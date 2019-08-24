@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ToDoImage</string>
+    <string name="btnAddTitle">Add Item</string>
+    <string name="etNewItemDefault">Enter a new item</string>
+</resources>
