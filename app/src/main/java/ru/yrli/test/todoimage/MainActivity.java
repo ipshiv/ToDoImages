@@ -2,6 +2,7 @@ package ru.yrli.test.todoimage;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -52,15 +53,23 @@ public class MainActivity extends Activity {
 
                 // writeItems(); // <---- Add this line
 
+
+            }
+            public void onDTap(int pos) {
+                Log.d("DTAP", "Double tap at pos " + pos);
+                Intent intent = new Intent(MainActivity.this, ItemActivity.class);
+                intent.putExtra("message", items.get(pos));
+                startActivity(intent);
             }
         });
+        //lvItems.setOnClickListener();
         items.add("First Item");
         items.add("Second Item");
         // setupListViewListener();
     }
 
     public void onAddItem(View v) {
-        EditText etNewItem = (EditText) findViewById(R.id.etNewItem);
+        EditText etNewItem = findViewById(R.id.etNewItem);
         String itemText = etNewItem.getText().toString();
         itemsAdapter.add(itemText);
         etNewItem.setText("");

@@ -39,6 +39,10 @@ public class OnSwipeTouchListener implements View.OnTouchListener {
         Log.d("SWIPE", "Swipe left at pos " + pos);
     }
 
+    public void onDTap(int pos) {
+        Log.d("DTAP", "Double tap at pos " + pos);
+    }
+
     private final class GestureListener extends GestureDetector.SimpleOnGestureListener {
 
         private static final int SWIPE_THRESHOLD = 100;
@@ -68,6 +72,12 @@ public class OnSwipeTouchListener implements View.OnTouchListener {
                 return true;
             }
             return false;
+        }
+
+        @Override
+        public boolean onDoubleTap(MotionEvent e) {
+            onDTap(getPostion(e));
+            return true;
         }
 
     }
