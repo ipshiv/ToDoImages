@@ -9,4 +9,8 @@ public class LifoSupplyMethod implements SupplyMethods {
 
     }
 
+    public void changeItemValue(Object Supply, int delta) {
+
+    }
+
 }

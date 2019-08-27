@@ -1,6 +1,6 @@
 package ru.yrli.test.todoimage;
 
-public enum storageType {
+public enum StorageType {
     LIFO,
     FIFO
 }

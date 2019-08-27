@@ -8,4 +8,8 @@ public class FifoSupplyMethod implements SupplyMethods {
     public void pushSupply(Object supply) {
 
     }
+
+    public void changeItemValue(Object Supply, int delta) {
+
+    }
 }
