@@ -21,7 +21,7 @@ public class MainActivity extends Activity {
     private ArrayAdapter<String> itemsAdapter;
     private ListView lvItems;
     private int duration = Toast.LENGTH_SHORT;
-
+    private Storage storage;
 
     private float x1,x2;
     static final int MIN_DISTANCE = 150;
@@ -31,6 +31,11 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         // ADD HERE
+
+        StorageComponent component = DaggerStorageComponent.create();
+
+        storage.loadItems();
+
         lvItems = (ListView) findViewById(R.id.lvItems);
         items = new ArrayList<String>();
         itemsAdapter = new ArrayAdapter<String>(this,

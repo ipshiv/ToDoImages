@@ -1,17 +1,17 @@
-package ru.yrli.test.todoimage;
-
-import javax.inject.Inject;
+package com.example.personalstorage.Storage.presenter.SupplyMethods;
 
 public class FifoSupplyMethod implements SupplyMethods {
-    @Inject
+    @Override
     public void popSupply() {
 
     }
-    @Inject
+
+    @Override
     public void pushSupply(Object supply) {
 
     }
-    @Inject
+
+    @Override
     public void changeItemValue(Object Supply, int delta) {
 
     }

@@ -1,5 +1,7 @@
 package ru.yrli.test.todoimage;
 
+import android.util.Log;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -9,17 +11,29 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-public abstract class Storage {
+import javax.inject.Inject;
+
+public class Storage {
+
+    private static final String TAG = "Storage";
+    
 
     public String id;
     public String title;
-    public int total;
 
-   // private ArrayList<Object> SupplyChains;
+    private Product product;
 
-    private ArrayList<Object> Items;
+    private ArrayList<Product> Products;
 
-    SupplyMethods supplyMethods;
+    private SupplyMethods supplyMethods;
+
+    @Inject
+    public Storage(SupplyMethods supplyMethods) {
+        //this.id = id;
+        //this.title = title;
+        this.supplyMethods = supplyMethods;
+
+    }
 
     private boolean checkdate(String sDate) {
 
@@ -34,7 +48,7 @@ public abstract class Storage {
 
     }
 
-    private void calcTotalItemValue() {}
+    // private void calcTotalItemValue() {}
 
     public void popSupply() {
         supplyMethods.popSupply();
@@ -59,6 +73,9 @@ public abstract class Storage {
 
     public void loadItems() {
 
+        Log.d(TAG, "loadItems: Data loaded...");
+
+        /*
         List<String> titles = uplodaItemTiteslFromDB();
         for(String title : titles) {
             ArrayList<String[]> supplies = uploadSuppliesFromDB(title);
@@ -72,12 +89,15 @@ public abstract class Storage {
                 supplyData.put("date", supply[0]);
                 expired |= checkdate(supply[0]);
                 supplyData.put("quantity", supply[1]);
+                totalQuantity += Integer.parseInt(supply[1]);
                 supplyData.put("price", supply[2]);
-            Object[] itemData = new Object[]{title, supplyData, overBudget, expired};
+            Object[] itemData = new Object[]{title, totalQuantity, supplyData, overBudget, expired};
             this.Items.add(itemData);
 
             }
         }
+
+         */
 
 
 

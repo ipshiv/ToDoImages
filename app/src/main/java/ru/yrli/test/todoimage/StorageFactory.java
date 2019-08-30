@@ -6,8 +6,8 @@ import java.util.UUID;
 public class StorageFactory {
 
     private ArrayList<Storage> Storages;
-
-    public Storage createStorage(StorageType type, String title) {
+    /*
+    public Storage createStorage(StorageType type, String title, String id) {
         Storage toReturn = null;
         switch (type) {
             case LIFO:
@@ -23,7 +23,7 @@ public class StorageFactory {
         this.Storages.add(toReturn);
         return toReturn;
     }
-
+    */
     public void destroyStorage() {}
 
     public void getAllStorages() {}
@@ -31,10 +31,11 @@ public class StorageFactory {
     public void getCurrentStorage() {}
 
     public void loadStoragesData() {
+        /*
         ArrayList<Storage> storages = uploadStoragesFromDB();
         for Storage storage in storages:
             storage.loadItems();
-
+        */
     }
 
 

@@ -1,5 +1,5 @@
 package ru.yrli.test.todoimage;
-
+/*
 public class LifoStorage extends Storage {
 
     public LifoStorage () {
@@ -7,3 +7,4 @@ public class LifoStorage extends Storage {
     }
 
 }
+*/

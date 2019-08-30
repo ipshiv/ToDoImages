@@ -1,7 +1,4 @@
-package ru.yrli.test.todoimage;
-
-import javax.inject.Inject;
-
+package com.example.personalstorage.Storage.presenter.SupplyMethods;
 
 public interface SupplyMethods {
 
